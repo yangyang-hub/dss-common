@@ -15,7 +15,7 @@ func HandleErrorStr(err error, format string, a ...any) bool {
 	return false
 }
 
-func sendGet(url string) (map[string]interface{}, error) {
+func SendGet(url string) (map[string]interface{}, error) {
 	res, err := http.Get(url)
 	if HandleErrorStr(err, "请求失败;url: %v\n", url) {
 		return nil, err
