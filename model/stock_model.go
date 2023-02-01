@@ -74,7 +74,6 @@ func (stockCompany StockCompany) TableName() string {
 //股票行情
 type StockQuote struct {
 	TsCode    string  `json:"ts_code" gorm:"column:ts_code;primary_key"`       //股票代码
-	Type      string  `json:"type" gorm:"column:type;primary_key"`             //D：日线行情；W：周线行情；M：月线行情
 	TradeDate string  `json:"trade_date" gorm:"column:trade_date;primary_key"` //交易日期
 	Open      float64 `json:"open" gorm:"column:open;float(11,8)"`             //开盘价
 	High      float64 `json:"high" gorm:"column:high;float(11,8)"`             //最高价

@@ -27,28 +27,3 @@ const (
 	SZSE                 //深交所
 	BSE                  //北交所
 )
-
-//行情信息枚举
-type Quote int
-
-const QuoteConst Quote = 0
-
-func (n Quote) String() string {
-	return [...]string{"daily", "weekly", "monthly"}[n]
-}
-
-func (n Quote) List() []string {
-	return []string{"daily", "weekly", "monthly"}
-}
-
-func (n Quote) Exclude(i Quote) []string {
-	quote := QuoteConst.List()
-	quote = append(quote[:i], quote[i+1:]...)
-	return quote
-}
-
-const (
-	daily   Quote = iota //日行情
-	weekly               //周行情
-	monthly              //月行情
-)
