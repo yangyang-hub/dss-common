@@ -83,19 +83,3 @@ type ThsGnQuote struct {
 func (thsGnQuote ThsGnQuote) TableName() string {
 	return "ths_gn_quote"
 }
-
-//数组取差集
-func Minus[T ThsGn | ThsHy](arr1, arr2 []T) []T {
-	m := make(map[T]int)
-	nn := make([]T, 0)
-	for _, v := range arr1 {
-		m[v]++
-	}
-	for _, v := range arr2 {
-		times, _ := m[v]
-		if times == 1 {
-			nn = append(nn, v)
-		}
-	}
-	return nn
-}
