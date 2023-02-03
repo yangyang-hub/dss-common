@@ -84,6 +84,7 @@ type StockQuote struct {
 	PctChg    float64 `json:"pct_chg" gorm:"column:pct_chg;float(11,8)"`       //涨跌幅(未复权)
 	Vol       float64 `json:"vol" gorm:"column:vol;float(11,8)"`               //成交量(手)
 	Amount    float64 `json:"amount" gorm:"column:amount;float(11,8)"`         //成交额(千元)
+	LimitUp   int64   `json:"limit_up" gorm:"column:limit_up;tinyint(1)"`      //涨停板
 }
 
 func (stockQuote StockQuote) TableName() string {
