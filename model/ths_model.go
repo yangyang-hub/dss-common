@@ -1,6 +1,21 @@
 package model
 
 //同花顺概念列表
+type LongHu struct {
+	Symbol    string  `json:"symbol" gorm:"column:symbol;primary_key"`         //股票代码
+	TradeDate string  `json:"trade_date" gorm:"column:trade_date;primary_key"` //交易日期
+	Name      string  `json:"name" gorm:"column:name"`                         //股票名称
+	Close     float64 `json:"close" gorm:"column:close;float(11,8)"`           //收盘价
+	PctChg    float64 `json:"pct_chg" gorm:"column:pct_chg;float(11,8)"`       //涨跌幅
+	Amount    float64 `json:"amount" gorm:"column:amount;float(11,8)"`         //成交额(千元)
+	Buy       float64 `json:"buy" gorm:"column:buy;float(11,8)"`               //净买入额(千元)
+}
+
+func (longHu LongHu) TableName() string {
+	return "long_hu"
+}
+
+//同花顺概念列表
 type ThsGn struct {
 	Code string `json:"code" gorm:"column:code;primary_key"` //同花顺概念代码
 	Name string `json:"name" gorm:"column:name"`             //同花顺概念名称
