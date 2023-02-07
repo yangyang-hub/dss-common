@@ -12,9 +12,8 @@ func (thsGn ThsGn) TableName() string {
 
 //同花顺概念关联列表
 type ThsGnRelSymbol struct {
-	GnCode string `json:"gn_code" gorm:"column:gn_code;primary_key"` //同花顺概念代码
-	Symbol string `json:"symbol" gorm:"column:symbol;primary_key"`   //股票代码
-	GnName string `json:"gn_name" gorm:"column:gn_name"`             //同花顺概念名称
+	Symbol string `json:"symbol" gorm:"column:symbol"`   //股票代码
+	GnName string `json:"gn_name" gorm:"column:gn_name"` //同花顺概念名称
 }
 
 func (thsGnRelSymbol ThsGnRelSymbol) TableName() string {
