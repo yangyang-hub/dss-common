@@ -42,3 +42,16 @@ func Append_string(sli []string) string {
 	}
 	return buffer.String()
 }
+
+// 字符串切片去重
+func removeDuplicateElement(languages []string) []string {
+	result := make([]string, 0, len(languages))
+	temp := map[string]struct{}{}
+	for _, item := range languages {
+		if _, ok := temp[item]; !ok {
+			temp[item] = struct{}{}
+			result = append(result, item)
+		}
+	}
+	return result
+}
