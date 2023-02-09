@@ -53,7 +53,7 @@ type StockCompany struct {
 	Chairman      string  `json:"chairman" gorm:"column:chairman"`                     //法人代表
 	Manager       string  `json:"manager" gorm:"column:manager"`                       //总经理
 	Secretary     string  `json:"secretary" gorm:"column:secretary"`                   //董秘
-	RegCapital    float64 `json:"reg_capital" gorm:"column:reg_capital;decimal(11,8)"` //注册资本
+	RegCapital    float64 `json:"reg_capital" gorm:"column:reg_capital;decimal(11,2)"` //注册资本
 	SetupDate     string  `json:"setup_date" gorm:"column:setup_date"`                 //注册日期
 	Province      string  `json:"province" gorm:"column:province"`                     //所在省份
 	City          string  `json:"city" gorm:"column:city"`                             //所在城市
@@ -75,15 +75,15 @@ func (stockCompany StockCompany) TableName() string {
 type StockQuote struct {
 	TsCode    string  `json:"ts_code" gorm:"column:ts_code;primary_key"`       //股票代码
 	TradeDate string  `json:"trade_date" gorm:"column:trade_date;primary_key"` //交易日期
-	Open      float64 `json:"open" gorm:"column:open;float(11,8)"`             //开盘价
-	High      float64 `json:"high" gorm:"column:high;float(11,8)"`             //最高价
-	Low       float64 `json:"low" gorm:"column:low;float(11,8)"`               //最低价
-	Close     float64 `json:"close" gorm:"column:close;float(11,8)"`           //收盘价
-	PreClose  float64 `json:"pre_close" gorm:"column:pre_close;float(11,8)"`   //昨收价(前复权)
-	Change    float64 `json:"change" gorm:"column:change;float(11,8)"`         //涨跌额
-	PctChg    float64 `json:"pct_chg" gorm:"column:pct_chg;float(11,8)"`       //涨跌幅(未复权)
-	Vol       float64 `json:"vol" gorm:"column:vol;float(11,8)"`               //成交量(手)
-	Amount    float64 `json:"amount" gorm:"column:amount;float(11,8)"`         //成交额(千元)
+	Open      float64 `json:"open" gorm:"column:open;float(11,2)"`             //开盘价
+	High      float64 `json:"high" gorm:"column:high;float(11,2)"`             //最高价
+	Low       float64 `json:"low" gorm:"column:low;float(11,2)"`               //最低价
+	Close     float64 `json:"close" gorm:"column:close;float(11,2)"`           //收盘价
+	PreClose  float64 `json:"pre_close" gorm:"column:pre_close;float(11,2)"`   //昨收价(前复权)
+	Change    float64 `json:"change" gorm:"column:change;float(11,2)"`         //涨跌额
+	PctChg    float64 `json:"pct_chg" gorm:"column:pct_chg;float(11,2)"`       //涨跌幅(未复权)
+	Vol       float64 `json:"vol" gorm:"column:vol;float(11,2)"`               //成交量(万手)
+	Amount    float64 `json:"amount" gorm:"column:amount;float(11,2)"`         //成交额(万)
 	LimitUp   int64   `json:"limit_up" gorm:"column:limit_up;tinyint(1)"`      //涨停板
 }
 
