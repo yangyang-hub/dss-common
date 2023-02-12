@@ -1,18 +1,34 @@
 package model
 
-//同花顺概念列表
+// 龙虎榜
 type LongHu struct {
-	Symbol    string  `json:"symbol" gorm:"column:symbol;primary_key"`         //股票代码
-	TradeDate string  `json:"trade_date" gorm:"column:trade_date;primary_key"` //交易日期
-	Name      string  `json:"name" gorm:"column:name"`                         //股票名称
-	Close     float64 `json:"close" gorm:"column:close;float(11,2)"`           //收盘价
-	PctChg    float64 `json:"pct_chg" gorm:"column:pct_chg;float(11,2)"`       //涨跌幅
-	Amount    float64 `json:"amount" gorm:"column:amount;float(11,2)"`         //成交额
-	Buy       float64 `json:"buy" gorm:"column:buy;float(11,2)"`               //净买入额
+	Id        string  `json:"Id" gorm:"column:Id;primary_key"`               //id
+	Type      string  `json:"type" gorm:"column:type"`                       //类型
+	Symbol    string  `json:"symbol" gorm:"column:symbol"`                   //股票代码
+	TradeDate string  `json:"trade_date" gorm:"column:trade_date"`           //交易日期
+	Name      string  `json:"name" gorm:"column:name"`                       //股票名称
+	Close     float64 `json:"close" gorm:"column:close;float(11,2)"`         //收盘价
+	PctChg    float64 `json:"pct_chg" gorm:"column:pct_chg;float(11,2)"`     //涨跌幅
+	Amount    float64 `json:"amount" gorm:"column:amount;float(11,2)"`       //成交额
+	NetWorth  float64 `json:"net_worth" gorm:"column:net_worth;float(11,2)"` //净买入额
 }
 
 func (longHu LongHu) TableName() string {
 	return "long_hu"
+}
+
+// 龙虎榜详情
+type LongHuDetail struct {
+	LongHuId string  `json:"long_hu_id" gorm:"column:long_hu_id"`           //龙虎榜id
+	Dept     string  `json:"dept" gorm:"column:dept"`                       //营业部
+	Label    string  `json:"label" gorm:"column:label"`                     //标签
+	Buy      string  `json:"buy" gorm:"column:buy"`                         //买入额
+	Sell     float64 `json:"sell" gorm:"column:sell;float(11,2)"`           //卖出额
+	NetWorth float64 `json:"net_worth" gorm:"column:net_worth;float(11,2)"` //净买入额
+}
+
+func (longHuDetail LongHuDetail) TableName() string {
+	return "long_hu_detail"
 }
 
 //同花顺概念列表
