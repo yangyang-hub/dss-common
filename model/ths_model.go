@@ -2,15 +2,16 @@ package model
 
 // 龙虎榜
 type LongHu struct {
-	Id        string  `json:"Id" gorm:"column:Id;primary_key"`               //id
-	Type      string  `json:"type" gorm:"column:type"`                       //类型
-	Symbol    string  `json:"symbol" gorm:"column:symbol"`                   //股票代码
-	TradeDate string  `json:"trade_date" gorm:"column:trade_date"`           //交易日期
-	Name      string  `json:"name" gorm:"column:name"`                       //股票名称
-	Close     float64 `json:"close" gorm:"column:close;float(11,2)"`         //收盘价
-	PctChg    float64 `json:"pct_chg" gorm:"column:pct_chg;float(11,2)"`     //涨跌幅
-	Amount    float64 `json:"amount" gorm:"column:amount;float(11,2)"`       //成交额
-	NetWorth  float64 `json:"net_worth" gorm:"column:net_worth;float(11,2)"` //净买入额
+	Id        string         `json:"Id" gorm:"column:Id;primary_key"`               //id
+	Type      string         `json:"type" gorm:"column:type"`                       //类型
+	Symbol    string         `json:"symbol" gorm:"column:symbol"`                   //股票代码
+	TradeDate string         `json:"trade_date" gorm:"column:trade_date"`           //交易日期
+	Name      string         `json:"name" gorm:"column:name"`                       //股票名称
+	Close     float64        `json:"close" gorm:"column:close;float(11,2)"`         //收盘价
+	PctChg    float64        `json:"pct_chg" gorm:"column:pct_chg;float(11,2)"`     //涨跌幅
+	Amount    float64        `json:"amount" gorm:"column:amount;float(11,2)"`       //成交额
+	NetWorth  float64        `json:"net_worth" gorm:"column:net_worth;float(11,2)"` //净买入额
+	Detail    []LongHuDetail `json:"detail"`                                        //详情
 }
 
 func (longHu LongHu) TableName() string {
