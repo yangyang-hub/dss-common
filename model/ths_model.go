@@ -2,7 +2,7 @@ package model
 
 // 龙虎榜
 type LongHu struct {
-	Id        string         `json:"Id" gorm:"column:Id;primary_key"`               //id
+	Id        string         `json:"id" gorm:"column:id;primary_key"`               //id
 	Type      string         `json:"type" gorm:"column:type"`                       //类型
 	Symbol    string         `json:"symbol" gorm:"column:symbol"`                   //股票代码
 	TradeDate string         `json:"trade_date" gorm:"column:trade_date"`           //交易日期
