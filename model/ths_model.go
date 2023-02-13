@@ -11,7 +11,7 @@ type LongHu struct {
 	PctChg    float64        `json:"pct_chg" gorm:"column:pct_chg;float(11,2)"`     //涨跌幅
 	Amount    float64        `json:"amount" gorm:"column:amount;float(11,2)"`       //成交额
 	NetWorth  float64        `json:"net_worth" gorm:"column:net_worth;float(11,2)"` //净买入额
-	Detail    []LongHuDetail `json:"detail"`                                        //详情
+	Detail    []LongHuDetail `json:"detail" gorm:"foreignKey:long_hu_id"`           //详情
 }
 
 func (longHu LongHu) TableName() string {
