@@ -23,7 +23,7 @@ type LongHuDetail struct {
 	LongHuId string  `json:"long_hu_id" gorm:"column:long_hu_id"`           //龙虎榜id
 	Dept     string  `json:"dept" gorm:"column:dept"`                       //营业部
 	Label    string  `json:"label" gorm:"column:label"`                     //标签
-	Buy      string  `json:"buy" gorm:"column:buy;float(11,2)"`             //买入额
+	Buy      float64 `json:"buy" gorm:"column:buy;float(11,2)"`             //买入额
 	Sell     float64 `json:"sell" gorm:"column:sell;float(11,2)"`           //卖出额
 	NetWorth float64 `json:"net_worth" gorm:"column:net_worth;float(11,2)"` //净买入额
 }
