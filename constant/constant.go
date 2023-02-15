@@ -27,3 +27,9 @@ const (
 	SZSE                 //深交所
 	BSE                  //北交所
 )
+
+// 时间格式化
+const (
+	TimeFormatA string = "20060102"
+	TimeFormatB string = "2006-01-02"
+)
