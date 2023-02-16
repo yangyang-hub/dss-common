@@ -11,6 +11,6 @@ type LiveData struct {
 	Max      float64 `json:"max"`       //最高价
 	Open     float64 `json:"open"`      //开盘价
 	PreClose float64 `json:"pre_close"` //昨收价
-	// Min      float64 `json:"min"`       //最低价
+	Min      float64 `json:"min"`       //最低价
 	// Min      float64 `json:"min"`       //最低价
 }
