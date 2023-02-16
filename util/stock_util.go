@@ -11,21 +11,21 @@ func CalLimitUp(code string, preClose, change float64, stStock map[string]string
 	prefix := Substr(code, 0, 2)
 	var divValue float64 = 10
 	if stStock[code] != "" {
-		divValue = 5
+		divValue = 0.05
 	} else if prefix == "60" {
-		divValue = 10
+		divValue = 0.1
 	} else if prefix == "00" {
-		divValue = 10
+		divValue = 0.1
 	} else if prefix == "68" {
-		divValue = 20
+		divValue = 0.2
 	} else if prefix == "30" {
-		divValue = 20
+		divValue = 0.2
 	} else if Substr(code, 0, 1) == "8" {
-		divValue = 30
+		divValue = 0.3
 	}
 	preClosed := decimal.NewFromFloat(preClose)
 	p := decimal.NewFromFloat(divValue)
-	limit := preClosed.Div(p).Round(2)
+	limit := preClosed.Mul(p).Round(2)
 	res := decimal.NewFromFloat(change).Cmp(limit)
 	if res >= 0 {
 		return 1
