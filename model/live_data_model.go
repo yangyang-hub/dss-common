@@ -4,20 +4,20 @@ package model
 type LiveData struct {
 	Code       string  `json:"code"`        //编码
 	Name       string  `json:"name"`        //名称
+	Time       string  `json:"time"`        //更新时间
 	Now        float64 `json:"now"`         //当前价
 	Change     float64 `json:"change"`      //涨跌
 	PctChg     float64 `json:"pct_chg"`     //涨跌幅
-	Time       string  `json:"time"`        //更新时间
-	Max        float64 `json:"max"`         //最高价
 	Open       float64 `json:"open"`        //开盘价
 	PreClose   float64 `json:"pre_close"`   //昨收价
+	Max        float64 `json:"max"`         //最高价
 	Min        float64 `json:"min"`         //最低价
-	Vol        float64 `json:"vol"`         //成交量
-	Amount     float64 `json:"amount"`      //成交额
 	Amplitude  float64 `json:"amplitude"`   //振幅
 	Hands      float64 `json:"hands"`       //换手
+	Vol        float64 `json:"vol"`         //成交量
+	Amount     float64 `json:"amount"`      //成交额
 	FloatValue float64 `json:"float_value"` //流通市值
-	TotalValue float64 `json:"fotal_value"` //总市值
+	TotalValue float64 `json:"total_value"` //总市值
 	Ptb        float64 `json:"ptb"`         //市净率
 	Pte        float64 `json:"pte"`         //市盈率
 	Buy1       float64 `json:"buy1"`        //买1价格
